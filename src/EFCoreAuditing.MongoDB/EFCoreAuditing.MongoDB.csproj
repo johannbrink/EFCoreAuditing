@@ -2,10 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Johann Brink</Authors>
+    <Company>Johann Brink</Company>
+    <Product>MongoDB AuditStoreProvider for Entity Framework Core Auditing</Product>
+    <Description>This package is a MongoDB based AuditStoreProvider that extends the EFCoreAuditing NuGet package's functionality.</Description>
+    <Copyright></Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/johannbrink/EFCoreAuditing/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/johannbrink/EFCoreAuditing</PackageProjectUrl>
+    <PackageTags>EntityFramework EF Mongo MongoDB Audit Auditing</PackageTags>
+    <Title>MongoDB Provider for EF Core Auditing</Title>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EFCoreAuditing" Version="1.0.0" />
+    <PackageReference Include="EFCoreAuditing" Version="1.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
     <PackageReference Include="mongocsharpdriver" Version="2.4.3" />
     <PackageReference Include="System.Runtime" Version="4.3.0" />

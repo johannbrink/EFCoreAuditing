@@ -5,10 +5,13 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Johann Brink</Authors>
     <Company />
-    <Description>A package that implements Auditing for Entity Framework Core based DbContexts. It is extensible to allow other logging providers like MongoDB, Azure tables etc.\nJust inherit AuditingDbContext from your application's DbContext and use the overloaded SaveChange(string userName) instead of the standard SaveChanges().</Description>
+    <Description>A package that implements Auditing for Entity Framework Core based DbContexts. It is extensible to allow other logging providers like MongoDB, Azure tables etc. Just inherit AuditingDbContext from your application's DbContext and use the overloaded SaveChange(string userName) instead of the standard SaveChanges().</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/johannbrink/EFCoreAuditing/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/johannbrink/EFCoreAuditing</PackageProjectUrl>
     <PackageTags>EntityFramework EF Mongo MongoDB Audit Auditing</PackageTags>
+    <Version>1.0.1</Version>
+    <Product>Entity Framework Core Auditing</Product>
+    <Title>Entity Framework Core Auditing</Title>
   </PropertyGroup>
 
   <ItemGroup>
