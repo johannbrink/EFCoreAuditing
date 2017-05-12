@@ -1,4 +1,4 @@
-# EFCoreAuditing
+# EFCoreAuditing (Entity Framework Core Auditing)
 A package that implements Auditing for Entity Framework Core based DbContexts. It is extensible to allow other logging providers like MongoDB, Azure tables etc.
 
 1Entity Framework Core Version: NuGet package available at https://www.nuget.org/packages/EFCoreAuditing/
