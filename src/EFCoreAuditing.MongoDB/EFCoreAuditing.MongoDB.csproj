@@ -12,6 +12,9 @@
     <PackageProjectUrl>https://github.com/johannbrink/EFCoreAuditing</PackageProjectUrl>
     <PackageTags>EntityFramework EF Mongo MongoDB Audit Auditing</PackageTags>
     <Title>MongoDB Provider for EF Core Auditing</Title>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>1.0.2
+  -  Upgraded to netstandard2.0 and EntityFrameworkCore 2.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
