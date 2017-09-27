@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Johann Brink</Authors>
     <Company>Johann Brink</Company>
@@ -16,8 +16,8 @@
 
   <ItemGroup>
     <PackageReference Include="EFCoreAuditing" Version="1.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
-    <PackageReference Include="mongocsharpdriver" Version="2.4.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="mongocsharpdriver" Version="2.4.4" />
     <PackageReference Include="System.Runtime" Version="4.3.0" />
   </ItemGroup>
 
