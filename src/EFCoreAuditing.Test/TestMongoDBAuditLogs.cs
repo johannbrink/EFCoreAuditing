@@ -12,6 +12,7 @@ namespace EFCoreAuditing.Test
     [TestClass]
     public class TestMongoDBAuditLogs
     {
+        [Ignore]
         [TestMethod]
         public void Test_MongoLogging_And_DoNotAudit_Attribute()
         {
