@@ -9,11 +9,15 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/johannbrink/EFCoreAuditing/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/johannbrink/EFCoreAuditing</PackageProjectUrl>
     <PackageTags>EntityFramework EF Mongo MongoDB Audit Auditing</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Product>Entity Framework Core Auditing</Product>
     <Title>Entity Framework Core Auditing</Title>
-    <PackageReleaseNotes>1.0.2
-  -  Upgraded to netstandard2.0 and EntityFrameworkCore 2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      1.0.3
+      -  Added support for class-level [DoNotAudit] attribute
+      1.0.2
+      -  Upgraded to netstandard2.0 and EntityFrameworkCore 2.0
+    </PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

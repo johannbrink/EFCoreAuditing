@@ -48,6 +48,9 @@ namespace EFCoreAuditing
         private static IEnumerable<AuditLog> GetAuditLogs(EntityEntry entityEntry, string userName, EntityState entityState)
         {
             var returnValue = new List<AuditLog>();
+            if (entityEntry.GetType().GetCustomAttribute(typeof(DoNotAudit), true) == null)
+                return returnValue;
+
             var keyRepresentation = BuildKeyRepresentation(entityEntry, KeySeperator);
 
             var auditedPropertyNames =

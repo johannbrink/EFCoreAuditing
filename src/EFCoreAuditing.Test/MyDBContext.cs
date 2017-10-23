@@ -19,6 +19,8 @@ namespace EFCoreAuditing.Test
 
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<CustomerHistory> CustomerHistory { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase();//.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EFAuditingTestHarness;Trusted_Connection=True;MultipleActiveResultSets=true");

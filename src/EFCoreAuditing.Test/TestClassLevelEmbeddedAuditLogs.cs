@@ -7,7 +7,7 @@ using System.Diagnostics;
 namespace EFCoreAuditing.Test
 {
     [TestClass]
-    public class TestEmbeddedAuditLogs
+    public class TestClassLevelEmbeddedAuditLogs
     {
         [TestMethod]
         public void Test_Logging_And_DoNotAudit_Attribute()
@@ -17,28 +17,19 @@ namespace EFCoreAuditing.Test
                 myDbContext.Database.EnsureDeleted();
                 myDbContext.Database.EnsureCreated();
 
-                var customer = new Customer()
+                var customerHistory = new CustomerHistory()
                 {
                     FirstName = "TestFirstName",
                     LastName = "TEstLAstNAme"
                 };
-                myDbContext.Customers.Add(customer);
+                myDbContext.CustomerHistory.Add(customerHistory);
 
-                var auditablePropCount =
-                    customer.GetType()
-                        .GetProperties()
-                        .Count(p => !p.GetCustomAttributes(typeof(DoNotAudit), true).Any());
-
-                var nonAuditablePropCount =
-                    customer.GetType()
-                        .GetProperties()
-                        .Count(p => p.GetCustomAttributes(typeof(DoNotAudit), true).Any());
                 myDbContext.SaveChanges("Test User");
 
-                customer.LastName = "TestLastName"; // This should throw an exception below
+                customerHistory.LastName = "TestLastName"; // This should throw an exception below
                 myDbContext.SaveChanges("Test User");
 
-                Debug.WriteLine($"Added object with {auditablePropCount} auditable properties and {nonAuditablePropCount} non-auditable properties.");
+                Debug.WriteLine($"Added object that should result in 0 auditable properties.");
 
                 var addedAuditLogs = myDbContext.GetAuditLogs().Where(_=>_.EventType=="Added").ToList();
                 var modifiedAuditLogs = myDbContext.GetAuditLogs().Where(_ => _.EventType == "Modified").ToList();
@@ -49,8 +40,8 @@ namespace EFCoreAuditing.Test
                     Debug.WriteLine($"AuditLogId:{auditLog.AuditLogId} TableName:{auditLog.TableName} ColumnName:{auditLog.ColumnName} OriginalValue:{auditLog.OriginalValue} NewValue:{auditLog.NewValue} EventDateTime:{auditLog.EventDateTime} EventType:{auditLog.EventType}");
                 }
 
-                Assert.AreEqual(addedAuditLogs.Count() , auditablePropCount);
-                Assert.AreEqual(modifiedAuditLogs.Count(), 1);
+                Assert.AreEqual(addedAuditLogs.Count() , 0);
+                Assert.AreEqual(modifiedAuditLogs.Count(), 0);
 
                 myDbContext.Database.EnsureDeleted();
             }
